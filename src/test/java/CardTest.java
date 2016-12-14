@@ -36,10 +36,17 @@ public class CardTest {
     }
 
     @Test (expected = IllegalArgumentException.class)
-    public void cardConstructorWithWrongNumber_Should_Throw_IllegalArgumentException(){
+    public void cardConstructorWithWrongBigNumber_Should_Throw_IllegalArgumentException(){
         System.out.println("cardConstructorWithWrongNumber_Should_Throw_IllegalArgumentException test passed...");
         card = new Card("h25");
         assertEquals("h25", card.cardCode);
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void cardConstructorWithWrongTinyNumber_Should_Throw_IllegalArgumentException(){
+        System.out.println("cardConstructorWithWrongNumber_Should_Throw_IllegalArgumentException test passed...");
+        card = new Card("h1");
+        assertEquals("h1", card.cardCode);
     }
 
     @Test
