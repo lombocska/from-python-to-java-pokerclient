@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -22,18 +23,8 @@ public class PokerClient {
 
     public boolean highestCardIsMine(String p1, String p2, String p3, String p4, String p5) {
         Card hc = new Card("s2");
-        List<Card> o = new ArrayList<Card>();
-        List<Card> m = new ArrayList<Card>();
-        o.add(new Card(p1.toUpperCase()));
-        o.add(new Card(p2.toUpperCase()));
-        o.add(new Card(p3.toUpperCase()));
-        o.add(new Card(p4.toUpperCase()));
-        o.add(new Card(p5.toUpperCase()));
-        m.add(card1);
-        m.add(card2);
-        m.add(card3);
-        m.add(card4);
-        m.add(card5);
+        List<Card> o = new ArrayList(Arrays.asList(new Card(p1.toUpperCase()), new Card(p2.toUpperCase()),new Card(p3.toUpperCase()),new Card(p4.toUpperCase()),new Card(p5.toUpperCase())));
+        List<Card> m = new ArrayList(Arrays.asList(card1,card2,card3,card4,card5));
 
         for (int i = 0; i < o.size(); i++) {
             Card mc = m.get(i);
