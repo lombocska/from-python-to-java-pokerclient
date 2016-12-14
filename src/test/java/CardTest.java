@@ -43,8 +43,16 @@ public class CardTest {
     }
 
     @Test
-    public void getValue() throws Exception {
+    public void getValue_Should_Return_CardValue_Below_11() throws Exception {
+        System.out.println("getValue_Should_Return_CardValue_Below_11 test passed...");
+        assertEquals(2, card.getValue());
+    }
 
+    @Test
+    public void getValue_Should_Return_CardValue_Above_11(){
+        System.out.println("getValue_Should_Return_CardValue_Above_11 test passed...");
+        card = new Card("HQ");
+        assertEquals(12, card.getValue());
     }
 
 }
