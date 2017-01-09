@@ -1,4 +1,3 @@
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,12 +13,6 @@ public class CardTest {
     public void setUp() throws Exception {
         System.out.println("Setting Up...");
         card = new Card("s2");
-    }
-
-    @After
-    public void tearDown() throws Exception {
-        System.out.println("Tearing down...");
-        card = null;
     }
 
     @Test
@@ -60,6 +53,13 @@ public class CardTest {
         System.out.println("getValue_Should_Return_CardValue_Above_11 test passed...");
         card = new Card("HQ");
         assertEquals(12, card.getValue());
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void getValue_Should_Return_IllegalArgumentException(){
+        System.out.println("getValue_Should_Return_IllegalArgumentException test passed...");
+        card = new Card("LQ");
+        assertEquals("wrongLetter", card.getValue());
     }
 
 }
