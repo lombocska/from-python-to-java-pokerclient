@@ -23,7 +23,7 @@ public class PokerClientTest {
     @Test
     public void highestCardIsMine_Should_Return_True_WithSameCard() throws Exception {
         System.out.println("highestCardIsMine_Should_Return_True_WithSameCard test passed...");
-        assertEquals(false, pokerClient.highestCardIsMine("h3", "d2", "s3", "s4", "cq"));
+        assertEquals(true, pokerClient.highestCardIsMine("h3", "d2", "s3", "s4", "cq"));
     }
 
     @Test
